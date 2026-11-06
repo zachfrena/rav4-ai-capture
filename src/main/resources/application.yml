@@ -1,0 +1,16 @@
+gemini:
+  api-key: ${GEMINI_API_KEY} # user-defined
+  model: gemini-3.1-flash-lite
+
+server:
+  port: 8080 # the embedded tomcat server port from spring-boot-starter-web dependency
+
+spring:
+  datasource:
+    url: jdbc:sqlite:rav4.db # defines the database file
+    driver-class-name: org.sqlite.JDBC # driver for implementing into SQLite
+
+  jpa: # allows application to work with Java objects instead of pure native SQL
+    database-platform: org.hibernate.community.dialect.SQLiteDialect # using SQLite-specific SQL handling
+    hibernate:
+      ddl-auto: update
